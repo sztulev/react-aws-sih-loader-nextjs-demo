@@ -11,9 +11,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
     "next": "^9.2.1",
+    "node-sass": "^4.13.1",
     "react": "^16.12.0",
-    "react-aws-sih-loader": "^1.0.4",
+    "react-aws-sih-loader": "^1.0.8",
     "react-dom": "^16.12.0"
   }
 }

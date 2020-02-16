@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '../styles/app.sass';
+
 import { 
   AWSSIHImg as Img, 
   AWSSIHBackgroundImage as BckImg, 
@@ -9,17 +11,29 @@ import {
 } from 'react-aws-sih-loader';
 
 
-function SIHImg() {
+import { SimpleImageDemo, SimpleImageCodeSample, SimpleImageDescription } from '../componnents/SingleImageDemo';
+import { CropSimpleImageDemo, CropSimpleImageCodeSample, CropSimpleImageDescription } from '../componnents/CropSingleImageDemo';
+import { 
+  SingleImageLazyLoadDemo, 
+  SingleImageLazyLoadCodeSample, 
+  SingleImageLazyLoadDescription 
+} from '../componnents/SingleImageLazyLoad.jsx';
 
+import { 
+  MultiImageDemo, 
+  MultiImageCodeSample, 
+  MultiImageDescription 
+} from '../componnents/MultipleImageWithSingleConfig';
+
+
+function CropImageDemo() {
   return (
        <AWSSIHContext config={{
               width: 2048, 
               grayscale: false,
               normalize: false
             }}>
-        <div>
-          <Img src="static/img/large-photo-04.JPG" width={500} config={{resizeMode:'cover'}} />
-        </div>
+          <Img src="static/img/large-photo-04.JPG" width={100} config={{width: 100, height: 200}}/>
         </AWSSIHContext>
   )
 }
@@ -96,8 +110,86 @@ export default function Index() {
       endpoint: 'https://d1vwwrgylxdfl3.cloudfront.net',
       bucket: 'react-aws-sih-loader-demo-1',
     }}>
-      <div className="App">
-        <header className="App-header">
+      <section className="section">
+        <div className="container">
+          <h1 className="title">
+            Demo site for <i>react-aws-sih-loader</i>
+          </h1>
+          <p className="subtitle">
+           
+          </p>
+
+        </div>
+      </section>
+      
+      <section>
+        <div className="container">
+          <div className="tile is-ancestor">
+            <div className="tile is-vertical">
+
+              <div className="tile box">
+                <div className="tile is-7 is-parent">
+                  <div className="tile is-child is-vertical ">
+                    <SimpleImageDescription/>
+                    <SimpleImageCodeSample/>
+                  </div>
+                </div>
+                <div className="tile is-parent">
+                  <div className="tile is-child">
+                    <SimpleImageDemo/>
+                  </div>
+                </div>
+              </div>
+
+              <div className="tile box">
+                <div className="tile is-7 is-parent">
+                  <div className="tile is-child is-vertical ">
+                    <CropSimpleImageDescription/>
+                    <CropSimpleImageCodeSample/>
+                  </div>
+                </div>
+                <div className="tile is-parent">
+                  <div className="tile is-child">
+                    <CropSimpleImageDemo/>
+                  </div>
+                </div>
+              </div>
+
+              <div className="tile box">
+                <div className="tile is-7 is-parent">
+                  <div className="tile is-child is-vertical ">
+                    <SingleImageLazyLoadDescription/>
+                    <SingleImageLazyLoadCodeSample/>
+                  </div>
+                </div>
+                <div className="tile is-parent">
+                  <div className="tile is-child">
+                    <SingleImageLazyLoadDemo/>
+                  </div>
+                </div>
+              </div>
+
+              <div className="tile box">
+                <div className="tile is-7 is-parent">
+                  <div className="tile is-child is-vertical ">
+                    <MultiImageDescription/>
+                    <MultiImageCodeSample/>
+                  </div>
+                </div>
+                <div className="tile is-parent">
+                  <div className="tile is-child">
+                    <MultiImageDemo/>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* <div className="App">
+        <header className="Header">
           <p>
             Hello!
           </p>
@@ -120,7 +212,7 @@ export default function Index() {
      
 
         </header>
-      </div>
+      </div> */}
     </AWSSIHContext>
   );
 }
