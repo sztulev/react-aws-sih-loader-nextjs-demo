@@ -26,6 +26,8 @@ function MultiImageCodeSample() {
         <pre>
             {
 `<AWSSIHContext config={{
+    endpoint: 'https://d1vwwrgylxdfl3.cloudfront.net',
+    bucket: 'react-aws-sih-loader-demo-1',
     width: 100, height: 400
     normalize: true
   }}>
@@ -42,10 +44,10 @@ function MultiImageCodeSample() {
 function MultiImageDescription() {
     return (
          <div className="description">
-             <h2 className="title is-5">A single common configuration for several child images</h2>
+             <h2 className="title is-5">A single common configuration for multiple images</h2>
              <p>
-                'AWSSIHContext' can be used to specify configuration at a higher level. In the background 
-                it uses React's context to pass down the configuration.     
+                <code>{'<AWSSIHContext>'}</code> can be used to specify configuration at a higher level. 
+                It uses React's context in the background to pass down configuration.     
              </p>
          </div>
     )

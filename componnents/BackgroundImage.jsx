@@ -1,40 +1,48 @@
 import React from 'react';
 
 import { 
-    AWSSIHLazyLoadImg, 
-  AWSSIHContext 
+    AWSSIHBackgroundImage
 } from 'react-aws-sih-loader';
 
 
-function SingleImageLazyLoadDemo() {
+function BackgroundImageDemo() {
     return (
-        <AWSSIHLazyLoadImg src="static/img/large-photo-03.JPG" width={400} config={{width:2048}}/>
+        <AWSSIHBackgroundImage src="static/img/large-photo-03.JPG" 
+            config={{width:1024}} 
+            style={{width:'400px', height:'250px', backgroundSize:'cover'}}>
+            <h3 className="is-size-4 has-text-danger">This is a text over background</h3>
+        </AWSSIHBackgroundImage>
     )
 }
 
-function SingleImageLazyLoadCodeSample() {
+function BackgroundImageCodeSample() {
     return (
         <div>
         <pre>
             {
-`<AWSSIHLazyLoadImg src="large-photo-03.JPG" 
-                    width={400} 
-                    config={{width:2048}} />`}
+`<AWSSIHBackgroundImage src="large-photo-03.JPG" 
+        config={{width:1024}} 
+        style={{width:'400px', height:'250px', backgroundSize:'cover'}}>
+    <h3>This is a text over background</h3>
+</AWSSIHBackgroundImage>`}
         </pre>
         </div>
     )
 }
 
-function SingleImageLazyLoadDescription() {
+function BackgroundImageDescription() {
     return (
          <div className="description">
-             <h2 className="title is-5">Lazy load single image</h2>
+             <h2 className="title is-5">Background image</h2>
              <p >
-                 Use 'AWSSIHLazyLoadImg' to lazy load larger size image. It will wrap the image in a 'div' element and adds background while the image is loading. 
+                 Use <code>{'<AWSSIHBackgroundImage>'}</code>to generate a <code>{'<div>'}</code> element with background image.
              </p>
          </div>
     )
 }
 
 
-export { SingleImageLazyLoadDemo, SingleImageLazyLoadCodeSample, SingleImageLazyLoadDescription };
+export {
+    BackgroundImageDemo, 
+    BackgroundImageCodeSample, 
+    BackgroundImageDescription };

@@ -25,6 +25,18 @@ import {
   MultiImageDescription 
 } from '../componnents/MultipleImageWithSingleConfig';
 
+import { 
+  BackgroundImageDemo, 
+  BackgroundImageCodeSample, 
+  BackgroundImageDescription 
+} from '../componnents/BackgroundImage.jsx';
+
+import { 
+  LLBackgroundImageDemo, 
+  LLBackgroundImageCodeSample, 
+  LLBackgroundImageDescription 
+} from '../componnents/BackgroundImageLazyLoading.jsx';
+
 
 function CropImageDemo() {
   return (
@@ -183,6 +195,33 @@ export default function Index() {
                 </div>
               </div>
 
+              <div className="tile box">
+                <div className="tile is-7 is-parent">
+                  <div className="tile is-child is-vertical ">
+                    <BackgroundImageDescription/>
+                    <BackgroundImageCodeSample/>
+                  </div>
+                </div>
+                <div className="tile is-parent">
+                  <div className="tile is-child">
+                    <BackgroundImageDemo/>
+                  </div>
+                </div>
+              </div>
+
+              <div className="tile box">
+                <div className="tile is-7 is-parent">
+                  <div className="tile is-child is-vertical ">
+                    <LLBackgroundImageDescription/>
+                    <LLBackgroundImageCodeSample/>
+                  </div>
+                </div>
+                <div className="tile is-parent">
+                  <div className="tile is-child">
+                    <LLBackgroundImageDemo/>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

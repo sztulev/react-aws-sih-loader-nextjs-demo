@@ -19,7 +19,10 @@ function SingleImageLazyLoadCodeSample() {
             {
 `<AWSSIHLazyLoadImg src="large-photo-03.JPG" 
                     width={400} 
-                    config={{width:2048}} />`}
+                    config={{        
+                        endpoint: 'https://d1vwwrgylxdfl3.cloudfront.net',
+                        bucket: 'react-aws-sih-loader-demo-1',
+                        width:2048}} />`}
         </pre>
         </div>
     )
@@ -28,11 +31,12 @@ function SingleImageLazyLoadCodeSample() {
 function SingleImageLazyLoadDescription() {
     return (
          <div className="description">
-             <h2 className="title is-5">Lazy loading a single image</h2>
-             <p >
-                 Use 'AWSSIHLazyLoadImg' component to lazy load images of larger size. It wraps the image in a 'div' element 
-                 with a background of a smaller image while the larger image is loading.  Refresh the page to see the image transition.
-             </p>
+            <h2 className="title is-5">Lazy loading a single image</h2>
+            <p >
+                Use <code>{'<AWSSIHLazyLoadImg>'}</code>  component to lazy load images of larger size. It wraps the image in a <code>{'<div>'}</code> element 
+                 with a background set to a small image while the larger image is loading. 
+            </p>
+            <p>Refresh the page to see the transition effect.</p>
          </div>
     )
 }
