@@ -38,82 +38,6 @@ import {
 } from '../componnents/BackgroundImageLazyLoading.jsx';
 
 
-function CropImageDemo() {
-  return (
-       <AWSSIHContext config={{
-              width: 2048, 
-              grayscale: false,
-              normalize: false
-            }}>
-          <Img src="static/img/large-photo-04.JPG" width={100} config={{width: 100, height: 200}}/>
-        </AWSSIHContext>
-  )
-}
-
-function SIHLazyLoadImg() {
-
-  return (
-
-       <AWSSIHContext config={{
-              bucket: 'react-aws-sih-loader-demo-2',
-              width: 2048, 
-              grayscale: false,
-              normalize: true, 
-              grayscalePreview: false
-            }}>
-        <div>
-          <LLImg src="static/img/large-photo-05.JPG" width={500} config={{resizeMode:'cover'}} />
-        </div>
-        </AWSSIHContext>
-  )
-}
-
-function SIHBckImg() {
-
-  return (
-        <AWSSIHContext config={{
-              width: 2048, 
-              grayscale: false,
-              normalize: false, 
-              grayscalePreview: false
-            }}>
-
-            <BckImg src="static/img/large-photo-02.JPG" 
-                className='demo-classname'            
-                config={{resizeMode:'cover', previewHeight: 25}}
-                style={{width: '100%', height:'80vw', maxHeight:'600px', backgroundRepeat:'no-repeat', backgroundSize:'cover'}} >
-                <p>Hello</p>
-            </BckImg>
-        </AWSSIHContext>
-  )
-}
-
-
-function SIHLazyLoadBckImg() {
-
-  return (
-        <AWSSIHContext config={{
-              width: 2048, 
-              grayscale: false,
-              normalize: true, 
-              previewGrayscale: true
-            }}>
-
-            <LLBckImg src="static/img/large-photo-03.JPG" 
-                className='demo-classname'            
-                config={{resizeMode:'cover', previewHeight: 25, transitionDuration:'.8s', trasitionTimingFunction:'ease-out' }}
-                style={{
-                  width: '100%', 
-                  height:'80vw', 
-                  maxHeight:'600px',
-                  backgroundRepeat:'no-repeat', 
-                  backgroundSize:'cover'}} 
-              >
-                <p>Hello</p>
-            </LLBckImg>
-        </AWSSIHContext>
-  )
-}
 
 
 export default function Index() {
@@ -125,7 +49,7 @@ export default function Index() {
       <section className="section">
         <div className="container">
           <h1 className="title">
-            Demo site for <i>react-aws-sih-loader</i>
+            Demo site for <i>react-aws-sih-loader</i> npmjs package
           </h1>
           <p className="subtitle">
            
